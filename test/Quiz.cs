@@ -43,9 +43,42 @@ namespace test
             foreach (Otazka o in otazky)
             {
                 o.VypisOtazku();
+
+                do
+                {
+                    string uzivOdpoved = Console.ReadLine();
+
+                } while ();
+
+
+
             }
 
             Console.ReadLine();
+        }
+
+        // kontrola vstupu, kym to nebude ok
+        private bool zkontrolujVstup(string uzivVstup,Otazka otazka)
+        {
+            if (otazka is SingleOtazka)
+            {
+                int indexOdpovedi;
+                bool jeCislo = int.TryParse(uzivVstup, out indexOdpovedi);
+                if (!jeCislo)
+                {
+                    return false;
+                }
+                else
+                {
+                    return indexOdpovedi > 0 && indexOdpovedi < otazka.Moznosti.Length;
+                    
+                }
+            }
+            else
+            {
+
+            }
+
         }
         
 
