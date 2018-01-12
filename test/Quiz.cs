@@ -10,10 +10,20 @@ namespace test
     {
         private Otazka[] otazky;
 
-        public void VyberOtazky()
+        public void Quiz()
         {
 
-            DBOtazek.Otazky[i];
+            Random r = new Random();
+
+            DBOtazek() db = new DBOtazek();
+
+            for (int i = 0; i < 3; i++)
+            {
+                int index = r.Next(2);
+                db[index];
+
+
+            }
 
         }
 

@@ -9,7 +9,15 @@ namespace test
     class Otazka
     {
         public string Text;
-        public Moznost[] Moznosti;
+
+
+// toto je funkcia properties
+        public Moznost[] Moznosti
+        {
+            get;
+            set;
+        }
+
         public Moznost[] Odpovedi;
     }
     class SingleOtazka : Otazka

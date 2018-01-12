@@ -17,7 +17,7 @@ namespace test
             {
                 new Moznost("1", false),
                 new Moznost("2", true),
-                new Moznost("3", false),
+                new Moznost("3", false)
             };
 
             Otazky.Add(o);
@@ -29,7 +29,7 @@ namespace test
             {
                 new Moznost("5", false),
                 new Moznost("4", true),
-                new Moznost("6", false),
+                new Moznost("6", false)
             };
 
             Otazky.Add(o);
@@ -40,7 +40,7 @@ namespace test
             {
                 new Moznost("5", false),
                 new Moznost("4", false),
-                new Moznost("6", true),
+                new Moznost("6", true)
             };
 
             Otazky.Add(o);
@@ -53,7 +53,7 @@ namespace test
             {
                 new Moznost("OS X", false),
                 new Moznost("OS Z", false),
-                new Moznost("Ubuntu", true),
+                new Moznost("Ubuntu", true)
             };
 
             Otazky.Add(m);
