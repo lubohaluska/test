@@ -43,14 +43,14 @@ namespace test
             foreach (Otazka o in otazky)
             {
                 o.VypisOtazku();
-
+                string uzivOdpoved;
+                int[] poleUzivIndexu;
                 do
                 {
-                    string uzivOdpoved = Console.ReadLine();
+                    uzivOdpoved = Console.ReadLine();
 
-                } while ();
-
-
+                } while (!zkontrolujVstup(uzivOdpoved,o, out poleUzivIndexu));
+                o.Odpovedi
 
             }
 
@@ -58,29 +58,40 @@ namespace test
         }
 
         // kontrola vstupu, kym to nebude ok
-        private bool zkontrolujVstup(string uzivVstup,Otazka otazka)
+        private bool zkontrolujVstup(string uzivVstup, Otazka otazka, out int[] poleIndexu)
         {
+            poleIndexu = null;
             if (otazka is SingleOtazka)
             {
-                int indexOdpovedi;
-                bool jeCislo = int.TryParse(uzivVstup, out indexOdpovedi);
-                if (!jeCislo)
-                {
-                    return false;
-                }
-                else
-                {
-                    return indexOdpovedi > 0 && indexOdpovedi < otazka.Moznosti.Length;
-                    
-                }
+                return jeCisloAJeVindexu(uzivVstup, otazka);
+
             }
             else
             {
-
+                //kontolujeme multiple
+                string[] poleOdpovediUziv = uzivVstup.Split(' ');
+                foreach (var uzivCislo in poleOdpovediUziv)
+                {
+                    if (!jeCisloAJeVindexu(uzivVstup, otazka)) return false;
+                }
+                return true;
             }
 
-        }
-        
 
+        }
+
+        private bool jeCisloAJeVindexu(string uzivateskeCislo, Otazka otazka)
+        {
+            int indexOdpovedi;
+            bool jeCislo = int.TryParse(uzivateskeCislo, out indexOdpovedi);
+            if (!jeCislo)
+            {
+                return false;
+            }
+            else
+            {
+                return indexOdpovedi > 0 && indexOdpovedi < otazka.Moznosti.Length;
+            }
+        }
     }
 }
