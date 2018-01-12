@@ -61,7 +61,7 @@ namespace test
 
         }
 
-        public static ArrayList Otazky = new ArrayList();
+        public  ArrayList Otazky = new ArrayList();
 
     }
 }

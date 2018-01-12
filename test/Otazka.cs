@@ -11,7 +11,7 @@ namespace test
         public string Text;
 
 
-// toto je funkcia properties
+        // toto je funkcia properties
         public Moznost[] Moznosti
         {
             get;
@@ -19,6 +19,17 @@ namespace test
         }
 
         public Moznost[] Odpovedi;
+
+
+        public void VypisOtazku()
+        {
+            Console.WriteLine(Text);
+            Console.WriteLine("------------");
+            foreach (Moznost m in Moznosti)
+            {
+                Console.WriteLine(m.Text);
+            }
+        }
     }
     class SingleOtazka : Otazka
     {
